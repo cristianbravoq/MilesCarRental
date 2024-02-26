@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MilesCarRental.API/1.0.0": {
+        "dependencies": {
+          "ErrorOr": "1.10.0",
+          "MilesCarRental.Contracts": "1.0.0",
+          "MilesCarRental.Core": "1.0.0"
+        },
+        "runtime": {
+          "MilesCarRental.API.dll": {}
+        }
+      },
+      "ErrorOr/1.10.0": {
+        "runtime": {
+          "lib/net6.0/ErrorOr.dll": {
+            "assemblyVersion": "1.10.0.0",
+            "fileVersion": "1.10.0.0"
+          }
+        }
+      },
+      "MilesCarRental.Contracts/1.0.0": {
+        "runtime": {
+          "MilesCarRental.Contracts.dll": {}
+        }
+      },
+      "MilesCarRental.Core/1.0.0": {
+        "dependencies": {
+          "ErrorOr": "1.10.0"
+        },
+        "runtime": {
+          "MilesCarRental.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MilesCarRental.API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ErrorOr/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-prNLSGADVmlFJeTt+GyZ7fg3fPJz8KYDaTIO2PtWZJ3S2ZTOkF6xKIo3JT99b+w4pvIPdl9vgpQckhbN4MdKzQ==",
+      "path": "erroror/1.10.0",
+      "hashPath": "erroror.1.10.0.nupkg.sha512"
+    },
+    "MilesCarRental.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MilesCarRental.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

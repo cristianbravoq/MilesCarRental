@@ -1,0 +1,9 @@
+POST https://localhost:7283/locations/create
+Content-Type: application/json
+
+{
+"capacity" : 20,
+"available" : true,
+"name" : "Aeropuerto Miami",
+"startDateTime": "2024-02-24T08:00:00"
+}
