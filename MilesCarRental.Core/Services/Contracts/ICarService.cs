@@ -1,4 +1,4 @@
-using MilesCarRental.Core.Entities;
+using MilesCarRental.Domain.Entities;
 
 namespace MilesCarRental.Core.Services.Contracts;
 

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "JhWpJU85oTjzI57p6PcZbWg8zcxRwRZKSn5nBcAQ2eJWURR9nBOyQyPK0FjgvuWBfJnprHGMkGOqhR/dadfk0w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Domain\\MilesCarRental.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\erroror\\1.10.0\\erroror.1.10.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

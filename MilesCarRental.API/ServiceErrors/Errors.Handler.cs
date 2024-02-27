@@ -1,7 +1,5 @@
-﻿using System.Reflection;
-
+﻿using MilesCarRental.Domain.Entities;
 using ErrorOr;
-using MilesCarRental.Core.Entities;
 
 namespace MilesCarRental.API.ServiceErrors
 {

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesCarRental.Infraestruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesCarRental.IntegrationTests", "MilesCarRental.IntegrationTests\MilesCarRental.IntegrationTests.csproj", "{C69A1E5E-BF0B-442A-AADB-80E58D86439D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilesCarRental.Domain", "MilesCarRental.Domain\MilesCarRental.Domain.csproj", "{6763FF5C-847F-4B8D-B266-A50251CD0F03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C69A1E5E-BF0B-442A-AADB-80E58D86439D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C69A1E5E-BF0B-442A-AADB-80E58D86439D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C69A1E5E-BF0B-442A-AADB-80E58D86439D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6763FF5C-847F-4B8D-B266-A50251CD0F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6763FF5C-847F-4B8D-B266-A50251CD0F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6763FF5C-847F-4B8D-B266-A50251CD0F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6763FF5C-847F-4B8D-B266-A50251CD0F03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

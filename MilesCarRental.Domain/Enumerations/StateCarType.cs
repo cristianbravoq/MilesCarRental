@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MilesCarRental.Core.Enumerations
+namespace MilesCarRental.Domain.Enumerations
 {
     public enum StateCarType
     {

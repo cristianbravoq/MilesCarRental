@@ -1,15 +1,21 @@
-using MilesCarRental.Core.Services.Contracts;
-using MilesCarRental.Core.Services.Implementations;
+using MilesCarRental.API;
+using MilesCarRental.API.Extensions;
+using MilesCarRental.Core;
+using MilesCarRental.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddControllers();
-    builder.Services.AddScoped<ICarService, CarService>();
-    builder.Services.AddScoped<ILocationService, LocationService>();
+    builder.Services.AddPresentation()
+                    .AddInfraestructure(builder.Configuration)
+                    .AddApplication();
 }
 
 var app = builder.Build();
 {
+    if (app.Environment.IsDevelopment())
+    {
+        app.ApplyMigrations();
+    }
     app.UseHttpsRedirection();
     app.MapControllers();
     app.Run();

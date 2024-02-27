@@ -1,4 +1,4 @@
-namespace MilesCarRental.Core.Enumerations;
+namespace MilesCarRental.Domain.Enumerations;
 
 public enum ClasificationCarType
 {

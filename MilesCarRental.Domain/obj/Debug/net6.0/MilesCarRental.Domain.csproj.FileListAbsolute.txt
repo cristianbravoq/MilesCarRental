@@ -1,0 +1,4 @@
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Domain\obj\Debug\net6.0\MilesCarRental.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Domain\obj\Debug\net6.0\MilesCarRental.Domain.AssemblyInfoInputs.cache
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Domain\obj\Debug\net6.0\MilesCarRental.Domain.AssemblyInfo.cs
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Domain\obj\Debug\net6.0\MilesCarRental.Domain.csproj.CoreCompileInputs.cache

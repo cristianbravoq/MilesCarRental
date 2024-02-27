@@ -1,8 +1,8 @@
-﻿using MilesCarRental.Core.Enumerations;
-using ErrorOr;
+﻿using MilesCarRental.Domain.Enumerations;
+using MilesCarRental.Domain.Primitives;
 
-namespace MilesCarRental.Core.Entities;
-public class Car
+namespace MilesCarRental.Domain.Entities.Cars;
+public class Car : AggregateRoot
 {
     //Rules
     public const int MinBrandLength = 3;
@@ -11,15 +11,15 @@ public class Car
     public const int MaxModelLength = 5;
 
     //Properties
-    public Guid Id { get; }
+    public CarId Id { get; }
     public string Brand { get; }
     public string Model { get; }
     public string Location { get; }
     public ClasificationCarType Type { get; }
     public StateCarType State { get; }
 
-    private Car(
-            Guid id,
+    public Car(
+            CarId id,
             string brand,
             string model,
             string location,
@@ -33,6 +33,11 @@ public class Car
         Location = location;
         Type = type;
         State = state;
+    }
+
+    private Car()
+    {
+
     }
 
     //public static ErrorOr<Car> Create(

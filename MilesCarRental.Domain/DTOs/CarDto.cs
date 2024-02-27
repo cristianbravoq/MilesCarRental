@@ -1,4 +1,4 @@
-namespace MilesCarRental.Core.DTOs;
+namespace MilesCarRental.Domain.DTOs;
 
 public class CarDto {
     public Guid Id { get; set; }

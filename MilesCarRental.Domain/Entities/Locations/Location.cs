@@ -1,4 +1,4 @@
-namespace MilesCarRental.Core.Entities;
+namespace MilesCarRental.Domain.Entities.Locations;
 
 public class Location
 {
