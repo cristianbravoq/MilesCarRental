@@ -5,6 +5,7 @@ using MilesCarRental.Core.Data;
 using MilesCarRental.Domain.Primitives;
 using MilesCarRental.Domain.Entities.Cars;
 using MilesCarRental.Infraestructure.Persistence.Repositories;
+using MilesCarRental.Domain.Entities.Locations;
 
 namespace MilesCarRental.Infraestructure;
 
@@ -26,6 +27,7 @@ public static class DependencyInjection
             sp.GetRequiredService<ApplicationDbContext>());
             
         services.AddScoped<ICarRepository, CarRepository>();
+        services.AddScoped<ILocationRepository, LocationRepository>();
 
         return services;
     }

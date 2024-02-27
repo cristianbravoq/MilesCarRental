@@ -8,8 +8,25 @@ public class Location
     public const int MaxCapacityLength = 5;
 
     //Properties
-    public Guid Id { get; }
+    public LocationId? Id { get; private set; }
     public int Capacity { get; }
     public bool Available { get; }
     public string? Name { get; }
+
+    public Location(
+            LocationId id,
+            int capacity,
+            bool available,
+            string name)
+    {   
+        Id = id;
+        Capacity = capacity;
+        Available = available;
+        Name = name;
+    }
+
+    private Location()
+    {
+        
+    }
 }

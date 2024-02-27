@@ -1,3 +1,4 @@
+
 namespace MilesCarRental.API;
 
 public static class DependencyInjection

@@ -4,7 +4,7 @@ Content-Type: application/json
 {
     "brand": "Toyota",
     "model": "2020",
-    "state": "Available",
-    "type": "4x4",
-    "startDateTime": "2024-02-08T08:00:00"
+    "location": "dsfsdf",
+    "type": 1,
+    "state": 2
 }

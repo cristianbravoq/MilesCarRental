@@ -11,10 +11,10 @@ public class Car : AggregateRoot
     public const int MaxModelLength = 5;
 
     //Properties
-    public CarId Id { get; private set; }
-    public string Brand { get; set; }
-    public string Model { get; set; }
-    public string Location { get; set; }
+    public CarId? Id { get; private set; }
+    public string? Brand { get; set; }
+    public string? Model { get; set; }
+    public string? Location { get; set; }
     public ClasificationCarType Type { get; set; }
     public StateCarType State { get; set; }
 
@@ -39,5 +39,4 @@ public class Car : AggregateRoot
     {
 
     }
-
 }

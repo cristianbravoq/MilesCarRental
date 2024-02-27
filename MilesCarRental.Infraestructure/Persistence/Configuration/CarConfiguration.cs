@@ -12,7 +12,7 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
 
         builder.HasKey(c => c.Id);
         builder.Property(c => c.Id).HasConversion(
-            carId => carId.Value,
+            carId => carId!.value,
             value => new CarId(value));
 
         builder.Property(c => c.Brand).HasMaxLength(10);
