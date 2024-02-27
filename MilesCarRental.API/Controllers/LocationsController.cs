@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using MilesCarRental.Contracts.Locations;
-using MilesCarRental.Core.Services.Contracts;
 
 namespace MilesCarRental.API.Controllers
 {
@@ -9,12 +8,6 @@ namespace MilesCarRental.API.Controllers
     [Route("[controller]")]
     public class LocationsController : ControllerBase
     {
-        private readonly ILocationService _locationService;
-
-        public LocationsController(ILocationService locationService)
-        {
-            _locationService = locationService;
-        }
 
         [HttpPost("create")]
         public IActionResult CreateLocation(CreateLocationRequest request)

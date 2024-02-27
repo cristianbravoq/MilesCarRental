@@ -19,9 +19,9 @@ public static class DependencyInjection
     private static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options => 
-            options.UseSqlServer(configuration.GetConnectionString("Database")));
+            options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
         services.AddScoped<IApplicationDbContext>(sp => 
-            sp.GetRequiredService<IApplicationDbContext>());
+            sp.GetRequiredService<ApplicationDbContext>());
         services.AddScoped<IUnitOfWork>(sp => 
             sp.GetRequiredService<ApplicationDbContext>());
             

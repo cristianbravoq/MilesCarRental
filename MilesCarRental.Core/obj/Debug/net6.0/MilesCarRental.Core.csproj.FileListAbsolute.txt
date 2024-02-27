@@ -10,3 +10,6 @@ C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\obj\Debug\net6.0\
 C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\obj\Debug\net6.0\refint\MilesCarRental.Core.dll
 C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\obj\Debug\net6.0\MilesCarRental.Core.pdb
 C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\obj\Debug\net6.0\ref\MilesCarRental.Core.dll
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\bin\Debug\net6.0\MilesCarRental.Domain.dll
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\bin\Debug\net6.0\MilesCarRental.Domain.pdb
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Core\obj\Debug\net6.0\MilesCarRental.Core.csproj.CopyComplete

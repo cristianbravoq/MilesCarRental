@@ -1,6 +1,6 @@
-using MilesCarRental.Core.Entities;
+using MilesCarRental.Domain.Entities.Locations;
 
-namespace MilesCarRental.Core.Services.Contracts;
+namespace MilesCarRental.Domain.Entities.Locations;
 
 public interface ILocationService{
     Task<IEnumerable<Location>> GetLocationsByAvailability();

@@ -11,12 +11,12 @@ public class Car : AggregateRoot
     public const int MaxModelLength = 5;
 
     //Properties
-    public CarId Id { get; }
-    public string Brand { get; }
-    public string Model { get; }
-    public string Location { get; }
-    public ClasificationCarType Type { get; }
-    public StateCarType State { get; }
+    public CarId Id { get; private set; }
+    public string Brand { get; set; }
+    public string Model { get; set; }
+    public string Location { get; set; }
+    public ClasificationCarType Type { get; set; }
+    public StateCarType State { get; set; }
 
     public Car(
             CarId id,
@@ -40,18 +40,4 @@ public class Car : AggregateRoot
 
     }
 
-    //public static ErrorOr<Car> Create(
-    //    string brand,
-    //    string model,
-    //    string location,
-    //    StateCarType state,
-    //    Guid? id = null)
-    //{
-    //    List<Error> errors = new();
-
-    //    if (brand.Length is MinBrandLength or > MaxBrandLength)
-    //    {
-    //        errors.Add(errors.Car.InvalidName
-    //    }
-    //}
 }

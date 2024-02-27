@@ -910,7 +910,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.27",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
           "MilesCarRental.Core": "1.0.0"
         },
@@ -2256,6 +2255,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "ErrorOr >= 1.10.0",
+      "Microsoft.EntityFrameworkCore >= 6.0.27",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.27",
       "MilesCarRental.Contracts >= 1.0.0",
       "MilesCarRental.Core >= 1.0.0",
@@ -2314,6 +2314,10 @@
           "ErrorOr": {
             "target": "Package",
             "version": "[1.10.0, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.27, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

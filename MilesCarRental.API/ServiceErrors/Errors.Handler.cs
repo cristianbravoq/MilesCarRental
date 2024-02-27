@@ -1,4 +1,4 @@
-﻿using MilesCarRental.Domain.Entities;
+﻿using MilesCarRental.Domain.Entities.Cars;
 using ErrorOr;
 
 namespace MilesCarRental.API.ServiceErrors

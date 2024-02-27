@@ -9,3 +9,9 @@ C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\obj\De
 C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\obj\Debug\net6.0\refint\MilesCarRental.Infraestructure.dll
 C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\obj\Debug\net6.0\MilesCarRental.Infraestructure.pdb
 C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\obj\Debug\net6.0\ref\MilesCarRental.Infraestructure.dll
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\bin\Debug\net6.0\MilesCarRental.Core.dll
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\bin\Debug\net6.0\MilesCarRental.Domain.dll
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\bin\Debug\net6.0\MilesCarRental.Core.pdb
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\bin\Debug\net6.0\MilesCarRental.Domain.pdb
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\obj\Debug\net6.0\MilesCarRental.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\crist\source\repos\MilesCarRental\MilesCarRental.Infraestructure\obj\Debug\net6.0\MilesCarRental.Infraestructure.csproj.CopyComplete

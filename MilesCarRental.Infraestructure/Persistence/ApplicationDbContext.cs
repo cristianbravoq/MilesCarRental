@@ -15,6 +15,12 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
     }
     public DbSet<Car> Cars { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+       base.OnModelCreating(modelBuilder);
+       modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+    }
+
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
         var domainEvents = ChangeTracker.Entries<AggregateRoot>()
@@ -28,6 +34,8 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
         {
             await _publisher.Publish(domainEvent, cancellationToken);
         }
+
+        Console.WriteLine("Bandera de app context");
 
         return result;
     }
