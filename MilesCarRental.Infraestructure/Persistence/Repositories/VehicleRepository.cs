@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Enumerations;
-using MilesCarRental.Infraestructure.Utils;
 using NetTopologySuite.Geometries;
 
 namespace MilesCarRental.Infraestructure.Persistence.Repositories;

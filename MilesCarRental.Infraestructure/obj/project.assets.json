@@ -2314,8 +2314,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj": {
-              "projectPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj"
+            "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj": {
+              "projectPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj"
             }
           }
         }
