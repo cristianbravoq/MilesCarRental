@@ -19,7 +19,7 @@ public class Vehicle : AggregateRoot
     public ClasificationVehicleType Type { get; set; }
     public StateVehicleType State { get; set; }
         
-    public LocationId LocationId { get; set; }
+    public LocationId? LocationId { get; set; }
 
     public Location Location { get; set; } 
 
@@ -29,7 +29,8 @@ public class Vehicle : AggregateRoot
             string brand,
             string model,
             ClasificationVehicleType type,
-            StateVehicleType state
+            StateVehicleType state,
+            LocationId? locationId
             )
     {
         //Enforce invariants
@@ -38,6 +39,7 @@ public class Vehicle : AggregateRoot
         Model = model;
         Type = type;
         State = state;
+        LocationId = locationId;
     }
 
     private Vehicle()

@@ -2,7 +2,15 @@ POST https://localhost:7283/locations/create
 Content-Type: application/json
 
 {
-"capacity" : 20,
-"available" : false,
-"name" : "Aeropuerto Miami"
+  "Capacity": 50,
+  "Available": true,
+  "Name": "Test Location",
+  "Country": "US",
+  "Line1": "123 Main St",
+  "Line2": "Apt 2",
+  "City": "New York",
+  "State": "NY",
+  "ZipCode": "10001",
+  "Latitude": 40.7128,
+  "Longitude": -74.006
 }

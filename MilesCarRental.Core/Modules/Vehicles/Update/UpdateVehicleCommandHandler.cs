@@ -21,7 +21,7 @@ internal sealed class UpdateVehicleCommandHandler :
     {
         ////
         //Here you enter the validations that could trigger errors.
-        if (await _vehicleRepository.ExistsAsync(new VehicleId(command.Id)) is not Domain.Entities.Vechicles.Vehicle item)
+        if (!await _vehicleRepository.ExistsAsync(new VehicleId(command.Id)))
         {
             return Error.NotFound("Vehicle.NotFound", "The vehicle with the provide Id was not found.");
         }
@@ -31,7 +31,8 @@ internal sealed class UpdateVehicleCommandHandler :
             command.Brand,
             command.Model,
             command.Type,
-            command.State
+            command.State,
+            command.LocationId
         );
 
         _vehicleRepository.Update(vehicle);

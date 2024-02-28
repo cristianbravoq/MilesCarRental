@@ -14,10 +14,6 @@ public class CreateVehiclesCommandValidator : AbstractValidator<CreateVehiclesCo
              .NotEmpty()
              .MaximumLength(5);
 
-        RuleFor(r => r.Location)
-             .NotEmpty()
-             .MaximumLength(255);
-
         RuleFor(r => r.State)
              .NotEmpty();
 

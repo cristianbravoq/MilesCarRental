@@ -21,7 +21,7 @@ internal sealed class UpdateLocationCommandHandler :
     public async Task<ErrorOr<Unit>> Handle(UpdateLocationCommand command, CancellationToken cancellationToken)
     {
         
-        if(await _locationRepository.ExistsAsync(new LocationId(command.Id)) is not Location item)
+        if(!await _locationRepository.ExistsAsync(new LocationId(command.Id)))
         {
             return Error.NotFound("Location.NotFound", "The location with the provide Id was not found.");
         }

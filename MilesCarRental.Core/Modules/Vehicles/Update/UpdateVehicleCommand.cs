@@ -1,5 +1,6 @@
 using ErrorOr;
 using MediatR;
+using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Enumerations;
 
 namespace MilesCarRental.Core.Modules.Vehicles.Update;
@@ -11,5 +12,5 @@ public record UpdateVehicleCommand(
     string Location,
     ClasificationVehicleType Type,
     StateVehicleType State,
-    Guid LocationId
+    LocationId LocationId
 ): IRequest<ErrorOr<Unit>>;

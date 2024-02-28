@@ -1,5 +1,6 @@
 using ErrorOr;
 using MediatR;
+using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Primitives;
 
@@ -27,7 +28,8 @@ internal sealed class CreateVehiclesCommandHandler :
             command.Brand,
             command.Model,
             command.Type,
-            command.State
+            command.State,
+            new LocationId(command.LocationId)
         );
 
         _vehiclesRepository.Add(vehicles);

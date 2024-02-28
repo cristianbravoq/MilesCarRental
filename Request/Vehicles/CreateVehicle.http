@@ -1,0 +1,10 @@
+POST https://localhost:7283/vehicles/create
+Content-Type: application/json
+
+{
+  "Brand": "Toyota",
+  "Model": "Camry",
+  "Type": 1,
+  "State": 1,
+  "LocationId" : "8102B6D5-B6FC-4A58-B529-53167D7A3D3C"
+}
