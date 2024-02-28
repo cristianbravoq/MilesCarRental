@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj": {}
+    "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj": {
+    "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj",
+        "projectUniqueName": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj",
         "projectName": "MilesCarRental.Contracts",
-        "projectPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj",
+        "projectPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\obj\\",
+        "outputPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",

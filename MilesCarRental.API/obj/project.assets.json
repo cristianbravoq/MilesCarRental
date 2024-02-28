@@ -2268,11 +2268,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.API\\MilesCarRental.API.csproj",
+      "projectUniqueName": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.API\\MilesCarRental.API.csproj",
       "projectName": "MilesCarRental.API",
-      "projectPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.API\\MilesCarRental.API.csproj",
+      "projectPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.API\\MilesCarRental.API.csproj",
       "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.API\\obj\\",
+      "outputPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2289,8 +2289,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj": {
-              "projectPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj"
+            "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj": {
+              "projectPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Contracts\\MilesCarRental.Contracts.csproj"
             },
             "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj": {
               "projectPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj"

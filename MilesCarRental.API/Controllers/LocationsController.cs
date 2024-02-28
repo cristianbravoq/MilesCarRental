@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MilesCarRental.Contracts.Locations;
 using MilesCarRental.Core.Modules.Vehicles.Create;
 using MilesCarRental.Core.Modules.Locations.Create;
+using MilesCarRental.Core.Modules.Locations.GetAvailablesByName;
 
 namespace MilesCarRental.API.Controllers;
 
@@ -22,15 +23,21 @@ public class LocationsController : ApiController
     public async Task<IActionResult> Create([FromBody] CreateLocationCommand command)
     {
         var createLocationResult = await _mediator.Send(command);
+
         return createLocationResult.Match(
-            vehicle => Ok(),
+            location => Ok(),
             errors => Problem(errors)
         );
     }
 
     [HttpPost("availables")]
-    public IActionResult GetAvailableLocations(GetAvailableLocationsRequest request)
+    public async Task<IActionResult> GetAvailablesByNameLocations([FromBody] GetAvailablesLocationsByNameQuery query)
     {
-        return Ok(request);
+        var availableLocationsResult = await _mediator.Send(query);
+
+        return availableLocationsResult.Match(
+            locations => Ok(locations),
+            errors => Problem(errors)
+        );
     }
 }

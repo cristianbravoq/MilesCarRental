@@ -9,8 +9,7 @@ public record UpdateVehicleCommand(
     Guid Id,
     string Brand,
     string Model,
-    string Location,
     ClasificationVehicleType Type,
     StateVehicleType State,
-    LocationId LocationId
+    Guid LocationId
 ): IRequest<ErrorOr<Unit>>;

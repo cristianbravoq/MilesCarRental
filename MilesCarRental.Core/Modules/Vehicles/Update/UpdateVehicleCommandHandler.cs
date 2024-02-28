@@ -1,5 +1,6 @@
 using ErrorOr;
 using MediatR;
+using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Primitives;
 
@@ -32,7 +33,7 @@ internal sealed class UpdateVehicleCommandHandler :
             command.Model,
             command.Type,
             command.State,
-            command.LocationId
+            new LocationId(command.LocationId)
         );
 
         _vehicleRepository.Update(vehicle);

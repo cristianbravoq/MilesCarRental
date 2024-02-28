@@ -1,0 +1,2 @@
+GET https://localhost:7283/vehicles/5183BF9E-AE4A-4A99-8CCB-4D9A7B8B3E57
+Content-Type: application/json

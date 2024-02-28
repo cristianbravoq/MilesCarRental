@@ -1,0 +1,11 @@
+PUT https://localhost:7283/vehicles/5183BF9E-AE4A-4A99-8CCB-4D9A7B8B3E57
+Content-Type: application/json
+
+{
+  "Id" : "5183BF9E-AE4A-4A99-8CCB-4D9A7B8B3E57",
+  "Brand": "Toyota",
+  "Model": "Camry",
+  "Type": 4,
+  "State": 2,
+  "LocationId" : "8102B6D5-B6FC-4A58-B529-53167D7A3D3C"
+}
