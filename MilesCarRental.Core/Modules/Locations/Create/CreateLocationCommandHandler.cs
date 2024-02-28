@@ -4,6 +4,7 @@ using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Primitives;
 using MilesCarRental.Domain.ValueObjects;
+using NetTopologySuite.Geometries;
 
 namespace MilesCarRental.Core.Modules.Locations.Create;
 
@@ -31,14 +32,16 @@ internal sealed class CreateLocationCommandHandler :
                 return ErrorsLocation.AddressWithBadFormat;
             }
 
-            var location = new Location(
+            var location = new Domain.Entities.Locations.Location(
                 new LocationId(Guid.NewGuid()),
                 command.Capacity,
                 command.Available,
                 command.Name,
                 address,
                 command.Latitude,
-                command.Longitude);
+                command.Longitude,
+                new Point(command.Longitude, command.Latitude) { SRID = 4326 }
+                );
 
             _locationRepository.Add(location);
 

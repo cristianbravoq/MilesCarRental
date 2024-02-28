@@ -2,7 +2,6 @@ using ErrorOr;
 using MediatR;
 using MilesCarRental.Core.Modules.Locations.Common;
 using MilesCarRental.Domain.Entities.Locations;
-using MilesCarRental.Domain.ValueObjects;
 
 namespace MilesCarRental.Core.Modules.Locations.GetAvailablesByName;
 

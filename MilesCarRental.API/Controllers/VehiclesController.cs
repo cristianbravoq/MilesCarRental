@@ -31,6 +31,17 @@ public class VehiclesController : ApiController
         );
     }
 
+    [HttpPost("availables")]
+    public async Task<IActionResult> GetAvailableVehiclesByUbication([FromBody] GetAvailableVehiclesByUbicationQuery query)
+    {
+        var vehiclesResult = await _mediator.Send(query);
+
+        return vehiclesResult.Match(
+            vehicles => Ok(vehicles),
+            errors => Problem(errors)
+        );
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {

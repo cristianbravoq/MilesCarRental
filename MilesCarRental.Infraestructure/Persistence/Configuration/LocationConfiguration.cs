@@ -4,9 +4,9 @@ using MilesCarRental.Domain.Entities.Locations;
 
 namespace MilesCarRental.Infraestructure.Persistence.Configuration;
 
-public class LocationConfiguration : IEntityTypeConfiguration<Location>
+public class LocationConfiguration : IEntityTypeConfiguration<Domain.Entities.Locations.Location>
 {
-    public void Configure(EntityTypeBuilder<Location> builder)
+    public void Configure(EntityTypeBuilder<Domain.Entities.Locations.Location> builder)
     {
         builder.ToTable("Locations");
 
@@ -29,6 +29,11 @@ public class LocationConfiguration : IEntityTypeConfiguration<Location>
             addressBuilder.Property(a => a.State).HasMaxLength(40);
             addressBuilder.Property(a => a.ZipCode).HasMaxLength(10);
         });
+        
+        builder.Property(l => l.Ubication)
+                .HasConversion(
+                    p => p,
+                    p => p);
 
         builder.Property(c => c.Latitude);
         builder.Property(c => c.Longitude);

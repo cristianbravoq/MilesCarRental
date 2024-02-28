@@ -6,6 +6,7 @@ using MilesCarRental.Core.Modules.Locations.GetAll;
 using MilesCarRental.Core.Modules.Locations.Update;
 using MilesCarRental.Core.Modules.Locations.Delete;
 using MilesCarRental.Core.Modules.Locations.GetAvailablesByName;
+using MilesCarRental.Core.Modules.Locations.GetAllAvailables;
 
 namespace MilesCarRental.API.Controllers;
 
@@ -36,6 +37,18 @@ public class LocationsController : ApiController
         var availableLocationsResult = await _mediator.Send(query);
 
         return availableLocationsResult.Match(
+            locations => Ok(locations),
+            errors => Problem(errors)
+        );
+    }
+
+    [HttpGet("availables")]
+    public async Task<IActionResult> GetAllAvailablesLocations()
+    {
+        var query = new GetAllAvailablesLocationsQuery();
+        var locationsResult = await _mediator.Send(query);
+
+        return locationsResult.Match(
             locations => Ok(locations),
             errors => Problem(errors)
         );

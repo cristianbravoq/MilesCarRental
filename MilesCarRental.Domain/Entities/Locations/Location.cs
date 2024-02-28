@@ -1,5 +1,6 @@
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.ValueObjects;
+using NetTopologySuite.Geometries;
 
 namespace MilesCarRental.Domain.Entities.Locations;
 
@@ -12,6 +13,7 @@ public class Location
     public Address Address { get; private set; }
     public double Latitude { get; }
     public double Longitude { get; }
+    public Point Ubication { get; }
 
     public List<Vehicle> Vehicles { get; set; }
 
@@ -22,7 +24,8 @@ public class Location
             string name,
             Address address,
             double latitude,
-            double longitude
+            double longitude,
+            Point ubication
         )
     {
         Id = id;
@@ -32,6 +35,7 @@ public class Location
         Address = address;
         Latitude = latitude;
         Longitude = longitude;
+        Ubication = new Point(longitude, latitude) { SRID = 4326 };
     }
 
     private Location()
@@ -55,6 +59,8 @@ public class Location
             name, 
             address, 
             latitude, 
-            longitude);
+            longitude,
+            new Point(longitude, latitude) { SRID = 4326 }
+            );
     }
 }

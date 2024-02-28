@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MilesCarRental.Infraestructure;
+using NetTopologySuite.Geometries;
 
 #nullable disable
 
@@ -42,6 +43,10 @@ namespace MilesCarRental.Infraestructure.Persistence.Migrations
                     b.Property<string>("Name")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<Point>("Ubication")
+                        .IsRequired()
+                        .HasColumnType("geography");
 
                     b.HasKey("Id");
 

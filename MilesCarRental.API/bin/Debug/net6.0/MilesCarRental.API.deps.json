@@ -11,7 +11,6 @@
           "ErrorOr": "1.10.0",
           "Microsoft.EntityFrameworkCore": "6.0.27",
           "Microsoft.EntityFrameworkCore.Design": "6.0.27",
-          "MilesCarRental.Contracts": "1.0.0",
           "MilesCarRental.Core": "1.0.0",
           "MilesCarRental.Infraestructure": "1.0.0"
         },
@@ -208,6 +207,19 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/6.0.27": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
+          "NetTopologySuite": "2.3.0",
+          "NetTopologySuite.IO.SqlServerBytes": "2.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
+            "assemblyVersion": "6.0.27.0",
+            "fileVersion": "6.0.2724.6609"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
@@ -364,6 +376,28 @@
           }
         }
       },
+      "NetTopologySuite/2.3.0": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "NetTopologySuite.IO.SqlServerBytes/2.0.0": {
+        "dependencies": {
+          "NetTopologySuite": "2.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -430,6 +464,7 @@
           }
         }
       },
+      "System.Memory/4.5.3": {},
       "System.Runtime.Caching/4.7.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.7.0"
@@ -510,11 +545,6 @@
           }
         }
       },
-      "MilesCarRental.Contracts/1.0.0": {
-        "runtime": {
-          "MilesCarRental.Contracts.dll": {}
-        }
-      },
       "MilesCarRental.Core/1.0.0": {
         "dependencies": {
           "ErrorOr": "1.10.0",
@@ -531,7 +561,8 @@
       "MilesCarRental.Domain/1.0.0": {
         "dependencies": {
           "ErrorOr": "1.10.0",
-          "MediatR": "12.2.0"
+          "MediatR": "12.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": "6.0.27"
         },
         "runtime": {
           "MilesCarRental.Domain.dll": {}
@@ -540,6 +571,7 @@
       "MilesCarRental.Infraestructure/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
+          "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": "6.0.27",
           "MilesCarRental.Core": "1.0.0"
         },
         "runtime": {
@@ -665,6 +697,13 @@
       "sha512": "sha512-Yc66OLFHx7fY5vI1/q9F3FZNt+hdcUO1dhRQev9dffeFVn2v/AA2vGhh1NUpDHASA7iCS2DRkwCr/Y7LwI3fNQ==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.27",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.27.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/6.0.27": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-peT2B0bIoL4LMxwzMpCkCfez7aoTTr+kOJ6tb3R+pO7hrfNaZEcpMTAfcYpWoqH8CoALD62rJBNbqxVAm4Vj9w==",
+      "path": "microsoft.entityframeworkcore.sqlserver.nettopologysuite/6.0.27",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.nettopologysuite.6.0.27.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",
@@ -792,6 +831,20 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "NetTopologySuite/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y+YOvA5um+75Wm9NKE+EhUNCvLYWiPhPW5Q5eBNi6kVNbxsX60/nvIJtve5iRcbrAl38W9h2w2yBjU81cjDO5g==",
+      "path": "nettopologysuite/2.3.0",
+      "hashPath": "nettopologysuite.2.3.0.nupkg.sha512"
+    },
+    "NetTopologySuite.IO.SqlServerBytes/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TuyMB0VSlRJx86UrWeQ+SGgOMudvhIL1qJJdWJw78nWsXIzKRP4ooQAhhhCCH7n8q1lvd0/NW3ByaLlHxxNSPQ==",
+      "path": "nettopologysuite.io.sqlserverbytes/2.0.0",
+      "hashPath": "nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512"
+    },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -826,6 +879,13 @@
       "sha512": "sha512-5tBCjAub2Bhd5qmcd0WhR5s354e4oLYa//kOWrkX+6/7ZbDDJjMTfwLSOiZ/MMpWdE4DWPLOfTLOq/juj9CKzA==",
       "path": "system.identitymodel.tokens.jwt/6.8.0",
       "hashPath": "system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Runtime.Caching/4.7.0": {
       "type": "package",
@@ -889,11 +949,6 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
-    },
-    "MilesCarRental.Contracts/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "MilesCarRental.Core/1.0.0": {
       "type": "project",

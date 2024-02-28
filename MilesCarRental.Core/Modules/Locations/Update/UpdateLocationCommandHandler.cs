@@ -3,6 +3,7 @@ using MediatR;
 using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Primitives;
 using MilesCarRental.Domain.ValueObjects;
+using NetTopologySuite.Geometries;
 
 namespace MilesCarRental.Core.Modules.Locations.Update;
 
@@ -32,14 +33,15 @@ internal sealed class UpdateLocationCommandHandler :
             return Error.Validation("Location.Address", "Address is not valid.");
         }
 
-        var location = new Location(
+        var location = new Domain.Entities.Locations.Location(
             new LocationId(command.Id),
             command.Capacity,
             command.Available,
             command.Name,
             address,
             command.Latitude,
-            command.Longitude
+            command.Longitude,
+            new Point(command.Longitude, command.Latitude)
         );
 
         _locationRepository.Update(location);

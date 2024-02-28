@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj": {}
+    "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj": {}
   },
   "projects": {
     "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Core\\MilesCarRental.Core.csproj": {
@@ -128,6 +128,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[12.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": {
+              "target": "Package",
+              "version": "[6.0.27, )"
             }
           },
           "imports": [
@@ -150,14 +154,14 @@
         }
       }
     },
-    "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj": {
+    "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj",
         "projectName": "MilesCarRental.Infraestructure",
-        "projectPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj",
+        "projectPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\MilesCarRental.Infraestructure.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\obj\\",
+        "outputPath": "C:\\Users\\crist\\source\\repos\\MilesCarRental\\MilesCarRental.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -191,6 +195,10 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": {
               "target": "Package",
               "version": "[6.0.27, )"
             }

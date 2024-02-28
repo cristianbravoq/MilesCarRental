@@ -14,8 +14,14 @@ public class LocationRepository : ILocationRepository
     
     public async Task<List<Location>> GetByNameAvailablesAsync(string name) =>
         await _context.Locations
-            .Where(location => location.Name!.Contains(name))
+            .Where(location => location.Available && location.Name!.Contains(name))
             .ToListAsync();
+
+    public async Task<List<Location>> GetAllAvailablesAsync() =>
+        await _context.Locations
+            .Where(location => location.Available)
+            .ToListAsync();
+    
     public void Add(Location location) => _context.Locations.Add(location);
     public void Delete(Location location) => _context.Locations.Remove(location);
     public void Update(Location location) => _context.Locations.Update(location);

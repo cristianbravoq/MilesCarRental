@@ -6,6 +6,7 @@ using MilesCarRental.Domain.Primitives;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Infraestructure.Persistence.Repositories;
 using MilesCarRental.Domain.Entities.Locations;
+using NetTopologySuite.Geometries;
 
 namespace MilesCarRental.Infraestructure;
 
@@ -20,7 +21,10 @@ public static class DependencyInjection
     private static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options => 
-            options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
+            options.UseSqlServer(
+                configuration.GetConnectionString("SqlServer"),
+                sqlServerOptions => sqlServerOptions.UseNetTopologySuite()
+                ));
         services.AddScoped<IApplicationDbContext>(sp => 
             sp.GetRequiredService<ApplicationDbContext>());
         services.AddScoped<IUnitOfWork>(sp => 
@@ -28,6 +32,12 @@ public static class DependencyInjection
             
         services.AddScoped<IVehicleRepository, VehicleRepository>();
         services.AddScoped<ILocationRepository, LocationRepository>();
+
+        services.AddScoped(provider =>
+        {
+            var geometryFactory = provider.GetRequiredService<GeometryFactory>();
+            return geometryFactory;
+        });
 
         return services;
     }
