@@ -1,13 +1,13 @@
-# Miles Car Rental API
+# Miles Vehicle Rental API
 
-- [Miles Car Rental API](#miles-car-rental-api)
-  - [Cars](#cars)
-    - [Create Car](#create-car)
-      - [Create Car Request](#create-car-request)
-      - [Create Car Response](#create-car-response)
-    - [Get Available Cars](#get-available-cars)
-      - [Get Available Cars Request](#get-available-cars-request)
-      - [Get Available Cars Response](#get-available-cars-response)
+- [Miles Vehicle Rental API](#miles-vehicles-rental-api)
+  - [Vehicles](#vehicles)
+    - [Create Vehicle](#create-vehicle)
+      - [Create Vehicle Request](#create-vehicle-request)
+      - [Create Vehicle Response](#create-vehicle-response)
+    - [Get Available Vehicles](#get-available-vehicles)
+      - [Get Available Vehicles Request](#get-available-vehicles-request)
+      - [Get Available Vehicles Response](#get-available-vehicles-response)
   - [Locations](#locations)
     - [Create Location](#create-location)
       - [Create Location Request](#create-location-request)
@@ -17,14 +17,14 @@
       - [Get Available Location Response](#get-available-locations-response)
     <!--  -->
 
-# Cars
+# Vehicles
 
-## Create car
+## Create Vehicle
 
-### Create Car Request
+### Create Vehicle Request
 
 ```js
-POST /car
+POST /vehicles/create
 ```
 
 ```json
@@ -37,14 +37,10 @@ POST /car
 }
 ```
 
-### Create Car Response
+### Create Vehicle Response
 
 ```js
 201 Created
-```
-
-```yml
-Location: {{host}}/Breakfasts/{{id}}
 ```
 
 ```json
@@ -59,12 +55,12 @@ Location: {{host}}/Breakfasts/{{id}}
 }
 ```
 
-## Get Available Cars
+## Get Available Vehicles
 
-### Get Available Cars Request
+### Get Available Vehicles Request
 
 ```js
-POST /available
+POST /vehicles/available
 ```
 
 ```json
@@ -73,7 +69,7 @@ POST /available
   }
 ```
 
-### Get Available Cars Response
+### Get Available Vehicles Response
 
 ```js
 200 Ok
@@ -97,7 +93,7 @@ POST /available
 ### Create Location Request
 
 ```js
-POST /available
+POST /location/available
 ```
 
 ```json
@@ -133,7 +129,7 @@ POST /available
 ### Get Available Locations Request
 
 ```js
-POST /available
+POST /location/available
 ```
 
 ```json

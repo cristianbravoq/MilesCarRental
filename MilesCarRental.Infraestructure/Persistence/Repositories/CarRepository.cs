@@ -1,38 +1,38 @@
 using Microsoft.EntityFrameworkCore;
-using MilesCarRental.Domain.Entities.Cars;
+using MilesCarRental.Domain.Entities.Vechicles;
 
 namespace MilesCarRental.Infraestructure.Persistence.Repositories;
 
-public class CarRepository : ICarRepository
+public class VehicleRepository : IVehicleRepository
 {
     private readonly ApplicationDbContext _context;
 
-    public CarRepository(ApplicationDbContext context)
+    public VehicleRepository(ApplicationDbContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public async void Add(Car car) => await _context.Cars.AddAsync(car);
+    public async void Add(Vehicle vehicle) => await _context.Vehicles.AddAsync(vehicle);
 
 
-    public void Delete(Car car)
+    public void Delete(Vehicle vehicle)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Car> ExistsAsync(CarId id)
+    public Task<Vehicle> ExistsAsync(VehicleId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<List<Car>> GetAll()
+    public Task<List<Vehicle>> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public async Task<Car?> GetByIdAsync(CarId id) => await _context.Cars.SingleOrDefaultAsync(car => car.Id == id);
+    public async Task<Vehicle?> GetByIdAsync(VehicleId id) => await _context.Vehicles.SingleOrDefaultAsync(vehicle => vehicle.Id == id);
 
-    public void Update(Car car)
+    public void Update(Vehicle vehicle)
     {
         throw new NotImplementedException();
     }

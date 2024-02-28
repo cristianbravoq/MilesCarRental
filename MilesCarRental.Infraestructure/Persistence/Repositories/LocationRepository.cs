@@ -28,12 +28,17 @@ public class LocationRepository : ILocationRepository
             .Where(location => location.Name!.Contains(name))
             .ToListAsync();
 
-    public Task<Location> GetByIdAsync(LocationId id)
+    public void Update(Location location)
     {
         throw new NotImplementedException();
     }
 
-    public void Update(Location location)
+    public Task<Location> ExistsAsync(LocationId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Location> GetByIdAsync(LocationId id)
     {
         throw new NotImplementedException();
     }

@@ -1,27 +1,27 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MilesCarRental.Contracts.Cars;
-using MilesCarRental.Core.Modules.Cars.Create;
+using MilesCarRental.Core.Modules.Vehicles.Create;
 
 namespace MilesCarRental.API.Controllers;
 
 [Route("[controller]")]
-public class CarsController : ApiController
+public class VehiclesController : ApiController
 {
     private readonly ISender _mediator;
 
-    public CarsController(ISender mediator)
+    public VehiclesController(ISender mediator)
     {
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));        
     }
 
 
     [HttpPost("create")]
-    public async Task<IActionResult> Create([FromBody] CreateCarCommand command)
+    public async Task<IActionResult> Create([FromBody] CreateVehiclesCommand command)
     {
-        var createCarResult = await _mediator.Send(command);
-        return createCarResult.Match(
-            car => Ok(),
+        var createVehicleResult = await _mediator.Send(command);
+        return createVehicleResult.Match(
+            vehicle => Ok(),
             errors => Problem(errors)
         );
     }

@@ -17,6 +17,20 @@ public class LocationConfiguration : IEntityTypeConfiguration<Location>
 
         builder.Property(c => c.Capacity);
         builder.Property(c => c.Available);
-        builder.Property(c => c.Name);
+        builder.Property(c => c.Name)
+            .HasMaxLength(50);
+
+        builder.OwnsOne(c => c.Address, addressBuilder =>
+        {
+            addressBuilder.Property(a => a.Country).HasMaxLength(3);
+            addressBuilder.Property(a => a.Line1).HasMaxLength(20);
+            addressBuilder.Property(a => a.Line2).HasMaxLength(20);
+            addressBuilder.Property(a => a.City).HasMaxLength(40);
+            addressBuilder.Property(a => a.State).HasMaxLength(40);
+            addressBuilder.Property(a => a.ZipCode).HasMaxLength(10);
+        });
+
+        builder.Property(c => c.Latitude);
+        builder.Property(c => c.Longitude);
     }
 }

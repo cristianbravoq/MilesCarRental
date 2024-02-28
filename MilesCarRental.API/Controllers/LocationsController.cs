@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using MilesCarRental.Contracts.Locations;
-using MilesCarRental.Core.Modules.Cars.Create;
+using MilesCarRental.Core.Modules.Vehicles.Create;
 using MilesCarRental.Core.Modules.Locations.Create;
 
 namespace MilesCarRental.API.Controllers;
@@ -23,7 +23,7 @@ public class LocationsController : ApiController
     {
         var createLocationResult = await _mediator.Send(command);
         return createLocationResult.Match(
-            car => Ok(),
+            vehicle => Ok(),
             errors => Problem(errors)
         );
     }

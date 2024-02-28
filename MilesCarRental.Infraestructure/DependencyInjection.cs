@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MilesCarRental.Core.Data;
 using MilesCarRental.Domain.Primitives;
-using MilesCarRental.Domain.Entities.Cars;
+using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Infraestructure.Persistence.Repositories;
 using MilesCarRental.Domain.Entities.Locations;
 
@@ -26,7 +26,7 @@ public static class DependencyInjection
         services.AddScoped<IUnitOfWork>(sp => 
             sp.GetRequiredService<ApplicationDbContext>());
             
-        services.AddScoped<ICarRepository, CarRepository>();
+        services.AddScoped<IVehicleRepository, VehicleRepository>();
         services.AddScoped<ILocationRepository, LocationRepository>();
 
         return services;

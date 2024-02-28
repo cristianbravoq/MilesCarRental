@@ -1,6 +1,6 @@
 namespace MilesCarRental.Domain.Enumerations;
 
-public enum ClasificationCarType
+public enum ClasificationVehicleType
 {
     Sedan,
     Hatchback,

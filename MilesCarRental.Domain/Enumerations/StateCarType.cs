@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MilesCarRental.Domain.Enumerations
 {
-    public enum StateCarType
+    public enum StateVehicleType
     {
         Rent,
         Available,

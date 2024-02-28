@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using MilesCarRental.Core.Data;
-using MilesCarRental.Domain.Entities.Cars;
+using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Primitives;
 
@@ -14,7 +14,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
     {
         _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
     }
-    public DbSet<Car> Cars { get; set; }
+    public DbSet<Vehicle> Vehicles { get; set; }
     public DbSet<Location> Locations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -37,7 +37,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
             await _publisher.Publish(domainEvent, cancellationToken);
         }
 
-        Console.WriteLine("Bandera de app context");
+        Console.WriteLine(result);
 
         return result;
     }
