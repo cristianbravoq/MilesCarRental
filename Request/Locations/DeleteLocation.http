@@ -1,0 +1,2 @@
+DELETE https://localhost:7283/locations/8102B6D5-B6FC-4A58-B529-53167D7A3D3C
+Content-Type: application/json

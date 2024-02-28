@@ -1,0 +1,17 @@
+PUT https://localhost:7283/locations/8102B6D5-B6FC-4A58-B529-53167D7A3D3C
+Content-Type: application/json
+
+{
+  "Id" : "8102B6D5-B6FC-4A58-B529-53167D7A3D3C",
+  "Capacity": 30,
+  "Available": true,
+  "Name": "Test Location",
+  "Country": "US",
+  "Line1": "123 Main St",
+  "Line2": "Apt 2",
+  "City": "New York",
+  "State": "NY",
+  "ZipCode": "10001",
+  "Latitude": 40.7128,
+  "Longitude": -74.006
+}

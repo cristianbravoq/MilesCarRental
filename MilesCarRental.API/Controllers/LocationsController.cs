@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
-
-using MilesCarRental.Contracts.Locations;
-using MilesCarRental.Core.Modules.Vehicles.Create;
 using MilesCarRental.Core.Modules.Locations.Create;
+using MilesCarRental.Core.Modules.Locations.GetAll;
+using MilesCarRental.Core.Modules.Locations.Update;
+using MilesCarRental.Core.Modules.Locations.Delete;
 using MilesCarRental.Core.Modules.Locations.GetAvailablesByName;
 
 namespace MilesCarRental.API.Controllers;
@@ -17,7 +18,6 @@ public class LocationsController : ApiController
     {
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));        
     }
-
 
     [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] CreateLocationCommand command)
@@ -37,6 +37,49 @@ public class LocationsController : ApiController
 
         return availableLocationsResult.Match(
             locations => Ok(locations),
+            errors => Problem(errors)
+        );
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var query = new GetAllLocationsQuery();
+        var locationsResult = await _mediator.Send(query);
+
+        return locationsResult.Match(
+            locations => Ok(locations),
+            errors => Problem(errors)
+        );
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateLocationCommand command)
+    {
+        if (command.Id != id)
+        {
+            List<Error> errors = new()
+            {
+                Error.Validation("Location.UpdateInvalid", "The request Id does not match with the url Id.")
+            };
+            return Problem(errors);
+        }
+
+        var updateResult = await _mediator.Send(command);
+
+        return updateResult.Match(
+            locationId => NoContent(),
+            errors => Problem(errors)
+        );
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        var deleteLocationResult = await _mediator.Send(new DeleteLocationCommand(id));
+
+        return deleteLocationResult.Match(
+            locationId => NoContent(),
             errors => Problem(errors)
         );
     }

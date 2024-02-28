@@ -62,15 +62,15 @@ public class VehiclesController : ApiController
         {
             List<Error> errors = new()
             {
-                Error.Validation("Customer.UpdateInvalid", "The request Id does not match with the url Id.")
+                Error.Validation("Vehicle.UpdateInvalid", "The request Id does not match with the url Id.")
             };
             return Problem(errors);
         }
 
-        var updateResult = await _mediator.Send(command);
+        var updateVehicleResult = await _mediator.Send(command);
 
-        return updateResult.Match(
-            customerId => NoContent(),
+        return updateVehicleResult.Match(
+            vehicleId => NoContent(),
             errors => Problem(errors)
         );
     }
@@ -78,10 +78,10 @@ public class VehiclesController : ApiController
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id)
     {
-        var deleteResult = await _mediator.Send(new DeleteVehiclesCommand(id));
+        var deleteVehicleResult = await _mediator.Send(new DeleteVehiclesCommand(id));
 
-        return deleteResult.Match(
-            customerId => NoContent(),
+        return deleteVehicleResult.Match(
+            vehicleId => NoContent(),
             errors => Problem(errors)
         );
     }
