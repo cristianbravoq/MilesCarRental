@@ -1,5 +1,6 @@
 using ErrorOr;
 using MediatR;
+using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Primitives;
@@ -20,8 +21,11 @@ internal sealed class CreateVehiclesCommandHandler :
 
     public async Task<ErrorOr<Unit>> Handle(CreateVehiclesCommand command, CancellationToken cancellationToken)
     {
-        ////
-        //Here you enter the validations that could trigger errors.
+        if(command.Brand.Length < 3 || command.Brand.Length > 15)
+            return ErrorsVechicles.InvalidBrand;
+
+        if(command.Model.Length < 3 || command.Brand.Length > 5)
+            return ErrorsVechicles.InvalidModel;        
 
         var vehicles = new Vehicle(
             new VehicleId(Guid.NewGuid()),

@@ -3,6 +3,7 @@ using ErrorOr;
 using MediatR;
 using MilesCarRental.Core.Modules.Vehicles.Common;
 using MilesCarRental.Domain.DomainErrors;
+using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Enumerations;
 using MilesCarRental.Domain.ValueObjects;
@@ -21,20 +22,16 @@ internal sealed class GetVehicleByIdQueryHandler : IRequestHandler<GetVehicleByI
     public async Task<ErrorOr<VehiclesResponse>> Handle(GetVehicleByIdQuery query, CancellationToken cancellationToken)
     {
         if (await _vehiclesRepository.GetByIdAsync(new VehicleId(query.Id)) is not Domain.Entities.Vechicles.Vehicle vehicle)
-        {
-            return Error.NotFound("Vehicle.NotFound", "The vehicle with the provide Id was not found.");
-        }
+            return ErrorsVechicles.IdProvidedNotFoundException;
 
-        if (vehicle.Location == null)
-        {
-            return Error.NotFound("Location.NotFound", "The location of the vehicle is not found.");
-        }
+        if (Address.Create(vehicle.Location.Address.Country, 
+                vehicle.Location.Address.Line1, 
+                vehicle.Location.Address.Line2, 
+                vehicle.Location.Address.City,
+                vehicle.Location.Address.State, 
+                vehicle.Location.Address.ZipCode) is not Address address)
+            return ErrorsLocation.AddressWithBadFormat;
 
-        if (Address.Create(vehicle.Location.Address.Country, vehicle.Location.Address.Line1, vehicle.Location.Address.Line2, vehicle.Location.Address.City,
-                    vehicle.Location.Address.State, vehicle.Location.Address.ZipCode) is not Address address)
-        {
-          return ErrorsLocation.AddressWithBadFormat;
-        }
 
         return new VehiclesResponse(
                 vehicle.Id!.value,

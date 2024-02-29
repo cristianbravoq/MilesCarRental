@@ -1,3 +1,4 @@
+using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.ValueObjects;
 using NetTopologySuite.Geometries;
@@ -28,6 +29,12 @@ public class Location
             Point ubication
         )
     {
+        if (latitude < -90 || latitude > 90)
+            throw new ArgumentException("Invalid longitude value", nameof(longitude));
+
+        if (longitude < -180 || longitude > 180)
+            throw new ArgumentException("Invalid longitude value", nameof(longitude));
+
         Id = id;
         Capacity = capacity;
         Available = available;
@@ -53,12 +60,12 @@ public class Location
             double longitude)
     {
         return new Location(
-            new LocationId(id), 
-            capacity, 
-            available, 
-            name, 
-            address, 
-            latitude, 
+            new LocationId(id),
+            capacity,
+            available,
+            name,
+            address,
+            latitude,
             longitude,
             new Point(longitude, latitude) { SRID = 4326 }
             );

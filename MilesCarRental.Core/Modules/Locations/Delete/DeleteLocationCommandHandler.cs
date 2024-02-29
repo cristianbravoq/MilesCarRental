@@ -1,5 +1,6 @@
 using ErrorOr;
 using MediatR;
+using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Locations;
 using MilesCarRental.Domain.Primitives;
 
@@ -19,9 +20,7 @@ internal sealed class DeleteLocationCommandHandler : IRequestHandler<DeleteLocat
     public async Task<ErrorOr<Unit>> Handle(DeleteLocationCommand command, CancellationToken cancellationToken)
     {
         if(await  _locationRepository.GetByIdAsync(new LocationId(command.Id)) is not Location location)
-                {
-            return Error.NotFound("Location.NotFound", "The location with the provided id was not found");
-        }
+            return ErrorsLocation.IdProvidedNotFound; 
 
         _locationRepository.Delete(location);
 

@@ -1,6 +1,7 @@
 using ErrorOr;
 using MediatR;
 using MilesCarRental.Core.Modules.Locations.Common;
+using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Locations;
 
 namespace MilesCarRental.Core.Modules.Locations.GetAllAvailables;
@@ -17,9 +18,7 @@ internal sealed class GetAllAvailablesLocationsQueryHandler : IRequestHandler<Ge
     public async Task<ErrorOr<IReadOnlyList<LocationResponse>>> Handle(GetAllAvailablesLocationsQuery query, CancellationToken cancellationToken)
     {
         if (await _locationRepository.GetAllAvailablesAsync() is not List<Location> locations)
-        {
-            return Error.NotFound("Locations.NotFound", "The locations with the provide name was not found.");
-        }
+            return ErrorsLocation.NotFound;
 
         return locations.Select(
             location => new LocationResponse(

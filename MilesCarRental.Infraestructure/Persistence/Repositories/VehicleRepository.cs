@@ -46,8 +46,3 @@ public class VehicleRepository : IVehicleRepository
             .ToListAsync();
     }
 }
-
-//.Where(v => v.LocationId == new LocationId(ubications.locationSelectedId) && v.State == StateVehicleType.Available)
-//         
-// .Where(v => DistanceCalculator.CalculateDistance(v.Location.Longitude, v.Location.Longitude, clientLocation) <= maxDistanceInMeters)
-                    

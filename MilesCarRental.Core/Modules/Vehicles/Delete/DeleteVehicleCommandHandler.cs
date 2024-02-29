@@ -1,5 +1,6 @@
 using ErrorOr;
 using MediatR;
+using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Primitives;
 
@@ -17,13 +18,11 @@ internal sealed class DeleteVehiclesCommandHandler : IRequestHandler<DeleteVehic
     }
     public async Task<ErrorOr<Unit>> Handle(DeleteVehiclesCommand command, CancellationToken cancellationToken)
     {
-        if(await _vehiclesRepository.GetByIdAsync(new VehicleId(command.Id)) is not Domain.Entities.Vechicles.Vehicle vehicle)
-        {
-            return Error.NotFound("Vehicle.NotFound", "The vehicle with the provided id was not found");
-        }
+        if (await _vehiclesRepository.GetByIdAsync(new VehicleId(command.Id)) is not Domain.Entities.Vechicles.Vehicle vehicle)
+            return ErrorsVechicles.IdProvidedNotFoundException;
 
         _vehiclesRepository.Delete(vehicle);
-        
+
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Unit.Value;

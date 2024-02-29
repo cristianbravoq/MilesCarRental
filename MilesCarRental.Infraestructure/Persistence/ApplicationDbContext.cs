@@ -36,9 +36,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
         {
             await _publisher.Publish(domainEvent, cancellationToken);
         }
-
-        Console.WriteLine(result);
-
+        
         return result;
     }
 }

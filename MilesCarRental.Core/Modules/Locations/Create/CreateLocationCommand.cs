@@ -15,4 +15,4 @@ public record CreateLocationCommand(
         string ZipCode,
         double Latitude,
         double Longitude
-) : IRequest<ErrorOr<Unit>>;
+) : IRequest<ErrorOr<Guid>>;

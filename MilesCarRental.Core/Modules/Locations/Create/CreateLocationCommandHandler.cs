@@ -8,8 +8,8 @@ using NetTopologySuite.Geometries;
 
 namespace MilesCarRental.Core.Modules.Locations.Create;
 
-internal sealed class CreateLocationCommandHandler :
-    IRequestHandler<CreateLocationCommand, ErrorOr<Unit>>
+public sealed class CreateLocationCommandHandler :
+    IRequestHandler<CreateLocationCommand, ErrorOr<Guid>>
 {
     private readonly ILocationRepository _locationRepository;
     private readonly IUnitOfWork _unitOfWork;
@@ -20,17 +20,14 @@ internal sealed class CreateLocationCommandHandler :
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<ErrorOr<Unit>> Handle(CreateLocationCommand command, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Guid>> Handle(CreateLocationCommand command, CancellationToken cancellationToken)
     {
         try
         {
-            ////
-            //Here you enter the validations that could trigger errors
             if (Address.Create(command.Country, command.Line1, command.Line2, command.City,
                     command.State, command.ZipCode) is not Address address)
-            {
                 return ErrorsLocation.AddressWithBadFormat;
-            }
+
 
             var location = new Domain.Entities.Locations.Location(
                 new LocationId(Guid.NewGuid()),
@@ -47,7 +44,7 @@ internal sealed class CreateLocationCommandHandler :
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return location.Id.value;
         }
         catch (Exception ex)
         {

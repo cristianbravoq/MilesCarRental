@@ -2,12 +2,13 @@ using System.IO.Compression;
 using ErrorOr;
 using MediatR;
 using MilesCarRental.Core.Modules.Vehicles.Common;
+using MilesCarRental.Domain.DomainErrors;
 using MilesCarRental.Domain.Entities.Vechicles;
 using MilesCarRental.Domain.Enumerations;
 
 namespace MilesCarRental.Core.Modules.Vehicles.GetById;
 
-internal sealed class GetAvailableVehiclesByUbicationQueryHandler : IRequestHandler<GetAvailableVehiclesByUbicationQuery,ErrorOr<IReadOnlyList<VehiclesResponse>>>
+public sealed class GetAvailableVehiclesByUbicationQueryHandler : IRequestHandler<GetAvailableVehiclesByUbicationQuery,ErrorOr<IReadOnlyList<VehiclesResponse>>>
 {
     private readonly IVehicleRepository _vehiclesRepository;
 
@@ -25,9 +26,7 @@ internal sealed class GetAvailableVehiclesByUbicationQueryHandler : IRequestHand
         );
 
         if (await _vehiclesRepository.GetAvailableVehiclesByLocationAsync(request) is not List<Vehicle> vehicles)
-        {
-            return Error.NotFound("Vehicle.NotFound", "The vehicle with the provide Id was not found.");
-        }
+            return ErrorsVechicles.IdProvidedNotFoundException;
 
         return vehicles.Select(
             vehicle => new VehiclesResponse(

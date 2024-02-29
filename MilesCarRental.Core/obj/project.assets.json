@@ -2264,7 +2264,8 @@
       "FluentValidation.AspNetCore >= 11.3.0",
       "MediatR >= 12.2.0",
       "Microsoft.EntityFrameworkCore >= 6.0.27",
-      "MilesCarRental.Domain >= 1.0.0"
+      "MilesCarRental.Domain >= 1.0.0",
+      "System.Runtime.CompilerServices.Unsafe >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -2329,6 +2330,10 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.27, )"
+          },
+          "System.Runtime.CompilerServices.Unsafe": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         },
         "imports": [
