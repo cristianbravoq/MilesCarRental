@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "Capacity": 25,
-  "Available": false,
+  "Available": true,
   "Name": "Location Rionegro",
   "Country": "USA",
   "Line1": "123 Main St",
