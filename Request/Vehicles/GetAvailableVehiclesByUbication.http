@@ -1,0 +1,8 @@
+POST https://localhost:7283/vehicles/availables
+Content-Type: application/json
+
+{
+  "locationSelectedId" : "3EF15446-BC96-402E-B655-321FFA19561D",
+  "latitudeUser": 6.2476,
+  "longitudeUser": 75.5658
+}

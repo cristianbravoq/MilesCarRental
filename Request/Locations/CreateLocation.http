@@ -1,0 +1,16 @@
+POST https://localhost:7283/locations/create
+Content-Type: application/json
+
+{
+  "Capacity": 25,
+  "Available": false,
+  "Name": "Location Rionegro",
+  "Country": "USA",
+  "Line1": "123 Main St",
+  "Line2": "Apt 2",
+  "City": "Medellin",
+  "State": "MED",
+  "ZipCode": "10001",
+  "Latitude": 6.2876,
+  "Longitude": 75.698  
+}

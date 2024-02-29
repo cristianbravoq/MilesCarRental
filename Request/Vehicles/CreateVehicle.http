@@ -1,0 +1,10 @@
+POST https://localhost:7283/vehicles/create
+Content-Type: application/json
+
+{
+  "Brand": "Bwm",
+  "Model": "Camry",
+  "Type": 3,
+  "State": 1,
+  "LocationId" : "207F33A7-1CB1-4A23-A0EB-CBC3644D7ABF"
+}

@@ -1,0 +1,1 @@
+namespace MilesCarRental.Core.Modules.Locations.Update;
